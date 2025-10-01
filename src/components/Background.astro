@@ -1,0 +1,23 @@
+---
+/* No necesitas props si solo es este fondo fijo */
+---
+
+<div class="gradient-bg"></div>
+
+<style>
+  .gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(180deg);
+    background-color: white;
+    background-image: radial-gradient(
+      60% 120% at 50% 50%,
+      hsla(0, 0%, 100%, 0) 0,
+      rgba(252, 205, 238, 0.5) 100%
+    );
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import type { SvgComponent } from 'astro/types';
+import AppleIcon from '../../public/icons/AppleIcon.svg';
+import GitHubIcon from '../../public/icons/GitHubIcon.svg';
+import YouTubeIcon from '../../public/icons/YouTubeIcon.svg';
+
+
+interface Props {
+    footer?: string;
+}
+
+interface Link {
+    href: string;
+    label: string;
+    icon: SvgComponent;
+}
+
+const links: Link[] = [
+    { href: "https://tinyurl.com/44rbh7sx", label: "Apple", icon: AppleIcon },
+    { href: "https://github.com/midudev", label: "GitHub", icon: GitHubIcon },
+    { href: "https://youtube.com/devaslife", label: "YouTube", icon: YouTubeIcon },
+];
+
+const { footer } = Astro.props;
+---
+
+<footer>
+    <p>{footer}</p>
+
+    <div class="floating-container">
+        {links.map(link => (
+            <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+                <link.icon />
+            </a>
+        ))}
+    </div>
+</footer>
+
+<style>
+    footer {
+        padding: 1em;
+    }
+</style>

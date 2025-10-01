@@ -1,16 +1,35 @@
 ---
+import  Layout from "../layouts/Layout.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Footer from "../components/Footer.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import Twitter from "../components/icons/Twitter.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Mail from "../components/icons/Mail.astro";
 
+const links = [
+	{ href: "https://github.com/302foundevx", label: "GitHub", icon: GitHub, class: " github" },
+	{ href: "https://twitter.com/302foundev", label: "Twitter", icon: Twitter, class: " twitter" },
+	{ href: "https://www.linkedin.com/in/302foundev", label: "LinkedIn", icon: LinkedIn, class: " linkedin" },
+	{ href: "mailto:jarscode.dev@outlook.com", label: "Email", icon: Mail, class: " email" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="hoobe">
+  <section class="container">
+	<ProfileCard
+		name="@302foundevx"
+		bio="Desarrollador Web | Entusiasta de Astro 🚀"
+		avatar="https://media.licdn.com/dms/image/v2/D4D03AQGiSdwge8Oe6g/profile-displayphoto-crop_800_800/B4DZmGEAG1JAAI-/0/1758890821071?e=1762387200&v=beta&t=WLmxAzP_KDVia0QmXh9Kz4qadWpg-PBkn2LJyU_ynD0"
+	/>
+	
+	<section class="links">
+		{links.map(link => (
+		<LinkButton {...link} />
+		))}
+	</section>
+
+	<Footer footer="© 2025 hoobe. Todos los derechos reservados." />
+	</section>
+</Layout>

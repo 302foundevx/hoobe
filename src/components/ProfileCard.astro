@@ -1,0 +1,14 @@
+---
+interface Props {
+    name?: string;
+    bio?: string;
+    avatar?: string | null;
+}
+
+const { name, bio, avatar } = Astro.props;
+---
+<section class="profile">
+    <img src={avatar} alt={name} class="avatar" />
+    <h1>{name}</h1>
+    <p>{bio}</p>
+</section>
