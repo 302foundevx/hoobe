@@ -2,6 +2,6 @@
 const { href, label, icon: Icon, class: className } = Astro.props;
 ---
 <a href={href} target="_blank" rel="noopener noreferrer" class={`link-btn ${className || ''}`}>
-  {Icon && <Icon width="24" height="24" />}
+  {Icon && <span class="hidden"><Icon width="24" height="24" /></span>}
   {label}
 </a>

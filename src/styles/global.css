@@ -37,9 +37,6 @@ body {
     margin: auto;
     border: 1px solid #646262;
     border-radius: 50%;
-}
-
-.profile img {
     transition: transform 0.3s ease;
 }
 
@@ -61,15 +58,27 @@ body {
 
 .link-btn {
     display: flex;
+    font-size: 18px;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: .5rem;
     margin: 1rem;
     border: 1px solid #646262;
     padding: 1rem;
     text-decoration: none;
     border-radius: 8px;
     transition: background 0.3s ease;
+}
+
+.link-btn svg {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    fill: var(--text-black);
+}
+
+.link-btn:hover svg {
+    fill: var(--text-white);
 }
 
 .link-btn.github:hover {
@@ -87,8 +96,12 @@ body {
     color: var(--text-white);
 }
 
+.link-btn.linkedin:hover svg {
+    color: var(--text-white);
+}
+
 .link-btn.email:hover {
-    background-color: #D0021B;
+    background-color: rgb(208, 2, 27);
     color: var(--text-white);
 }
 
@@ -125,11 +138,18 @@ footer {
 }
 
 .floating-container svg {
-    width: 40px;
-    height: 40px;
     fill: var(--text-white);
     background-color: var(--bg-black);
     transition: fill 0.3s ease;
     justify-content: center;
     align-items: center;
+}
+
+.links a {
+    font-weight: 500;
+}
+
+.link-btn svg, .floating-container svg {
+    width: 24px;
+    height: 24px;
 }
